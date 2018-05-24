@@ -16,35 +16,35 @@ module.exports = {
     }
 
     if (options.includeFontAwesomeAssets) {
-      app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.ttf'), {
+      app.import('node_modules/font-awesome/fonts/fontawesome-webfont.ttf', {
         destDir: 'fonts'
       });
 
-      app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff'), {
+      app.import('node_modules/font-awesome/fonts/fontawesome-webfont.woff', {
         destDir: 'fonts'
       });
 
-      app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff2'), {
+      app.import('node_modules/font-awesome/fonts/fontawesome-webfont.woff2', {
         destDir: 'fonts'
       });
 
-      app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.svg'), {
+      app.import('node_modules/font-awesome/fonts/fontawesome-webfont.svg', {
         destDir: 'fonts'
       });
 
-      app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.eot'), {
+      app.import('node_modules/font-awesome/fonts/fontawesome-webfont.eot', {
         destDir: 'fonts'
       });
     }
 
-    app.import(path.join(app.bowerDirectory, 'interact/interact.js'));
+    app.import('node_modules/interactjs/dist/interact.js');
     app.import('vendor/shims/interact.js');
 
     app.import('vendor/jstz.js');
     app.import('vendor/shims/jstz.js');
 
     if (app.env === 'test') {
-      app.import(path.join(app.bowerDirectory, 'jquery-simulate/jquery.simulate.js'), {
+      app.import('node_modules/jquery-simulate/jquery.simulate.js', {
         type: 'test'
       });
     }

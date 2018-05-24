@@ -10,10 +10,10 @@ module.exports = {
     return self.addAddonsToProject({
       packages: [{ name: 'ember-moment', target: '7.3.0' }]
     }).then(function() {
-      return self.addBowerPackagesToProject([
-        { name: 'interact', target: '1.2.8' },
+      return self.addPackagesToProject([
+        { name: 'interactjs', target: '1.2.8' },
         { name: 'jquery-simulate', target: '1.0.1' },
-        { name: 'fontawesome', target: '~4.7.0'}
+        { name: 'font-awesome', target: '~4.7.0' }
       ]);
     });
   }
