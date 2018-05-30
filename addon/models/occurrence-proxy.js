@@ -16,12 +16,19 @@ var OccurrenceProxy = Ember.Object.extend(Ember.Copyable, {
     );
   }),
 
-  day: Ember.computed('startingTime', 'calendar', function() {
-    const calendar = this.get('calendar');
+  day: Ember.computed('startingTime', 'calendar', 'calendar.{startingTime,startFromDate}', function() {
+    let currentDay = this.get('startingTime');
+    let firstDay;
+
+    if (this.get('calendar.startFromDate')) {
+      firstDay = this.get('calendar.startingTime');
+    } else {
+      firstDay = this.get('calendar.startingTime').startOf('isoWeek');
+    }
 
     return Day.create({
-      calendar: calendar,
-      offset: this.get('startingTime').diff(calendar.get('weekStartDate'), 'days')
+      calendar: this.get('calendar'),
+      offset: currentDay.dayOfYear() - firstDay.dayOfYear()
     });
   }),
 

@@ -6,14 +6,14 @@ import OccurrenceProxy from './occurrence-proxy';
 
 export default Calendar.extend({
   component: null,
-  timeZone: Ember.computed.reads('component.timeZone'),
+  timeZone: Ember.computed.oneWay('component.timeZone'),
+  startFromDate: Ember.computed.readOnly('component.startFromDate'),
   startingTime: computedMoment('component.startingDate'),
   dayStartingTime: computedDuration('component.dayStartingTime'),
   dayEndingTime: computedDuration('component.dayEndingTime'),
   timeSlotDuration: computedDuration('component.timeSlotDuration'),
-  weekStart: Ember.computed.reads('component.weekStart'),
 
-  defaultOccurrenceTitle: Ember.computed.reads(
+  defaultOccurrenceTitle: Ember.computed.oneWay(
     'component.defaultOccurrenceTitle'
   ),
 
@@ -22,8 +22,12 @@ export default Calendar.extend({
   ),
 
   occurrences: Ember.computed('component.occurrences.[]', function() {
-    return this.get('component.occurrences').map((occurrence) => {
-      return OccurrenceProxy.create({ calendar: this, content: occurrence });
+    let newOccurences = Ember.A();
+
+    this.get('component.occurrences').forEach((occurrence) => {
+      newOccurences.pushObject(OccurrenceProxy.create({ calendar: this, content: occurrence }));
     });
+
+    return newOccurences;
   })
 });

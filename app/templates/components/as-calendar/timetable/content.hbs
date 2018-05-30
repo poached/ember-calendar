@@ -5,8 +5,10 @@
 </ul>
 
 <ul class="as-calendar-timetable__days">
-  {{#each days as |day|}}
-    <li class="as-calendar-timetable__day {{if day.isToday "as-calendar-timetable__day--today"}}">
+  {{#each days as |day index|}}
+    <li
+      data-test-day data-test-day-id="{{index}}"
+      class="as-calendar-timetable__day {{if day.isToday "as-calendar-timetable__day--today"}}">
       {{yield day this}}
     </li>
   {{/each}}
