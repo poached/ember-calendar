@@ -5,7 +5,7 @@
   {{/rl-dropdown-toggle}}
 
   {{#rl-dropdown closeOnChildClick=".results"}}
-    {{#liquid-if showResults use="crossFade" containerless=true}}
+    {{#if showResults use="crossFade" containerless=true}}
       {{#if showSearch}}
         <div class="search">
           <div class="icon"><i></i></div>
@@ -31,6 +31,6 @@
           {{/each}}
         </ul>
       </div>
-    {{/liquid-if}}
+    {{/if}}
   {{/rl-dropdown}}
 {{/rl-dropdown-container}}

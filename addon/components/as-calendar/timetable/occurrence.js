@@ -86,7 +86,7 @@ export default OccurrenceComponent.extend({
   _resizeEnd: function() {
     this.attrs.onUpdate(this.get('content'), {
       endsAt: this.get('_preview.content.endsAt')
-    });
+    }, false);
 
     this.set('isInteracting', false);
     this.set('_calendar.occurrencePreview', null);
@@ -153,7 +153,7 @@ export default OccurrenceComponent.extend({
     this.attrs.onUpdate(this.get('content'), {
       startsAt: this.get('_preview.content.startsAt'),
       endsAt: this.get('_preview.content.endsAt')
-    });
+    }, false);
 
     this.set('isInteracting', false);
     this.set('_calendar.occurrencePreview', null);
@@ -168,7 +168,7 @@ export default OccurrenceComponent.extend({
 
   _validateAndSavePreview: function(changes) {
     if (this._validatePreviewChanges(changes)) {
-      this.attrs.onUpdate(this.get('_preview.content'), changes);
+      this.attrs.onUpdate(this.get('_preview.content'), changes, true);
     }
   },
 

@@ -17,8 +17,8 @@ var Day = Ember.Object.extend({
     return this.get('calendar.occurrences').filter((occurrence) => {
       var startingTime = occurrence.get('startingTime');
 
-      return startingTime >= this.get('startingTime') &&
-             startingTime <= this.get('endingTime');
+      return startingTime.isSameOrAfter(this.get('startingTime')) &&
+             startingTime.isSameOrBefore(this.get('endingTime'));
     });
   }),
 

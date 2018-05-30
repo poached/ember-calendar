@@ -1,58 +1,55 @@
 {
   "name": "ember-calendar",
-  "version": "0.3.9",
+  "version": "0.5.0",
   "description": "An awesome Ember calendar",
+  "keywords": [
+    "ember-addon"
+  ],
+  "license": "MIT",
+  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "repository": "https://github.com/alphasights/ember-calendar",
   "scripts": {
-    "start": "ember server",
     "build": "ember build",
+    "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "https://github.com/alphasights/ember-calendar",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "broccoli-asset-rev": "2.2.0",
-    "ember-cli": "1.13.13",
-    "ember-cli-app-version": "1.0.0",
-    "ember-cli-autoprefixer": "0.4.1",
-    "ember-cli-content-security-policy": "0.4.0",
-    "ember-cli-dependency-checker": "1.1.0",
-    "ember-cli-htmlbars": "1.0.1",
-    "ember-cli-htmlbars-inline-precompile": "0.3.1",
-    "ember-cli-ic-ajax": "0.2.4",
-    "ember-cli-inject-live-reload": "1.3.1",
-    "ember-cli-moment-shim": "1.0.0",
-    "ember-cli-qunit": "1.0.4",
-    "ember-cli-release": "0.2.8",
-    "ember-cli-sass": "5.3.1",
-    "ember-cli-sri": "1.2.0",
-    "ember-cli-uglify": "1.2.0",
-    "ember-component-inbound-actions": "0.0.4",
-    "ember-data": "2.1.0",
-    "ember-disable-proxy-controllers": "1.0.1",
-    "ember-export-application-global": "1.0.5",
-    "ember-moment": "6.0.0",
-    "ember-rl-dropdown": "0.5.0",
-    "ember-try": "0.2.2",
-    "liquid-fire": "0.23.0",
-    "moment": "2.11.2",
-    "moment-timezone": "0.5.1"
-  },
   "dependencies": {
-    "ember-cli-babel": "5.1.5"
+    "ember-cli-babel": "6.10.0",
+    "ember-lodash": "^4.17.4",
+    "ember-rl-dropdown": "^0.10.1",
+    "ember-cli-sass": "6.2.0"
   },
-  "keywords": [
-    "ember-addon"
-  ],
+  "devDependencies": {
+    "broccoli-asset-rev": "2.4.5",
+    "ember-cli": "2.13.2",
+    "ember-cli-dependency-checker": "1.3.0",
+    "ember-cli-eslint": "3.0.0",
+    "ember-cli-htmlbars": "1.1.1",
+    "ember-cli-htmlbars-inline-precompile": "0.4.0",
+    "ember-cli-inject-live-reload": "1.4.1",
+    "ember-cli-qunit": "4.0.0",
+    "ember-cli-shims": "1.1.0",
+    "ember-cli-sri": "2.1.0",
+    "ember-cli-uglify": "1.2.0",
+    "ember-moment": "7.3.0",
+    "ember-cli-moment-shim": "3.3.1",
+    "ember-disable-prototype-extensions": "1.1.0",
+    "ember-export-application-global": "2.0.0",
+    "ember-load-initializers": "1.0.0",
+    "ember-resolver": "4.0.0",
+    "ember-source": "2.13.0",
+    "ember-test-selectors": "^0.3.4",
+    "loader.js": "4.2.3"
+  },
+  "engines": {
+    "node": ">= 7"
+  },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://alphasights.github.io/ember-calendar/demo"
+    "demoURL": "https://alphasights.github.io/ember-calendar/demo",
+    "configPath": "tests/dummy/config"
   }
 }
